@@ -1708,7 +1708,7 @@ enum XMPPStreamConfig
             [queryElement addChild:element];
         }
 		
-		XMPPIQ *iq = [XMPPIQ iqWithType:@"set"];
+		XMPPIQ *iq = [XMPPIQ iqWithType:@"set" elementID:[self generateUUID]];
 		[iq addChild:queryElement];
 		
 		NSString *outgoingStr = [iq compactXMLString];
@@ -3966,7 +3966,7 @@ enum XMPPStreamConfig
 		NSXMLElement *bind = [NSXMLElement elementWithName:@"bind" xmlns:@"urn:ietf:params:xml:ns:xmpp-bind"];
 		[bind addChild:resource];
 		
-		XMPPIQ *iq = [XMPPIQ iqWithType:@"set"];
+		XMPPIQ *iq = [XMPPIQ iqWithType:@"set" elementID:[self generateUUID]];
 		[iq addChild:bind];
 		
 		NSString *outgoingStr = [iq compactXMLString];
@@ -3992,7 +3992,7 @@ enum XMPPStreamConfig
 		
 		NSXMLElement *bind = [NSXMLElement elementWithName:@"bind" xmlns:@"urn:ietf:params:xml:ns:xmpp-bind"];
 		
-		XMPPIQ *iq = [XMPPIQ iqWithType:@"set"];
+		XMPPIQ *iq = [XMPPIQ iqWithType:@"set" elementID:[self generateUUID]];
 		[iq addChild:bind];
 		
 		NSString *outgoingStr = [iq compactXMLString];
