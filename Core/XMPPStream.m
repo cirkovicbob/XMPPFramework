@@ -1742,7 +1742,7 @@ enum XMPPStreamConfig
             [queryElement addChild:element];
         }
 		
-		XMPPIQ *iq = [XMPPIQ iqWithType:@"set"];
+		XMPPIQ *iq = [XMPPIQ iqWithType:@"set" elementID:[self generateUUID]];
 		[iq addChild:queryElement];
 		
 		NSString *outgoingStr = [iq compactXMLString];
